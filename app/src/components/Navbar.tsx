@@ -34,7 +34,7 @@ export const Navbar = () => {
                 replace
                 className={`transition-colors duration-300 ${
                   pathname === "/"
-                    ? "text-violet-400"
+                    ? "text-violet-200"
                     : "text-violet-100 hover:text-violet-300"
                 }`}
                 onClick={() => {
@@ -51,7 +51,7 @@ export const Navbar = () => {
                 href="/"
                 className={`transition-colors duration-300 ${
                   pathname === "/"
-                    ? "text-violet-400"
+                    ? "text-violet-200"
                     : "text-violet-100 hover:text-violet-300"
                 }`}
               >
@@ -63,11 +63,59 @@ export const Navbar = () => {
                 href="/"
                 className={`transition-colors duration-300 ${
                   pathname === "/"
-                    ? "text-violet-400"
+                    ? "text-violet-200"
                     : "text-violet-100 hover:text-violet-300"
                 }`}
               >
                 Hosting & WordPress
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/"
+                className={`transition-colors duration-300 ${
+                  pathname === "/"
+                    ? "text-violet-200"
+                    : "text-violet-100 hover:text-violet-300"
+                }`}
+              >
+                Email
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/"
+                className={`transition-colors duration-300 ${
+                  pathname === "/"
+                    ? "text-violet-200"
+                    : "text-violet-100 hover:text-violet-300"
+                }`}
+              >
+                Sites
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/"
+                className={`transition-colors duration-300 ${
+                  pathname === "/"
+                    ? "text-violet-200"
+                    : "text-violet-100 hover:text-violet-300"
+                }`}
+              >
+                Marketing
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/"
+                className={`transition-colors duration-300 ${
+                  pathname === "/"
+                    ? "text-violet-200"
+                    : "text-violet-100 hover:text-violet-300"
+                }`}
+              >
+                RGPD
               </Link>
             </li>
           </ul>
@@ -110,7 +158,7 @@ export const Navbar = () => {
         </div>
         {/* Menu para telas pequenas */}
         <ul
-          className={`lg:hidden bg-zinc-300 fixed inset-y-0 top-20 left-0 h-1/2 w-full z-10 flex flex-col justify-center items-center transition-all duration-300 gap-8 ${
+          className={`lg:hidden bg-violet-700 fixed inset-y-0 top-20 left-0 h-1/2 w-full z-10 flex flex-col justify-center items-center transition-all duration-300 gap-8 ${
             isMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
           }`}
         >
@@ -118,7 +166,7 @@ export const Navbar = () => {
             <Link
               href="/"
               replace
-              className={`text-violet-400 hover:text-violet-300 font-bold`}
+              className={`text-violet-100 hover:text-violet-300 font-bold`}
               onClick={() => {
                 closeMenu();
                 if (pathname === "/") {
@@ -132,7 +180,7 @@ export const Navbar = () => {
           <li>
             <Link
               href="/"
-              className={`text-vilet-100 font-bold hover:text-yellow-500`}
+              className={`text-violet-100 font-bold hover:text-violet-300`}
               onClick={closeMenu}
             >
               Sevidores
@@ -141,10 +189,46 @@ export const Navbar = () => {
           <li>
             <Link
               href="/"
-              className={`text-violet-100 font-bold hover:text-yellow-500`}
+              className={`text-violet-100 font-bold hover:text-violet-300`}
               onClick={closeMenu}
             >
               Hosting & WordPress
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/"
+              className={`text-violet-100 font-bold hover:text-violet-300`}
+              onClick={closeMenu}
+            >
+              Email
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/"
+              className={`text-violet-100 font-bold hover:text-violet-300`}
+              onClick={closeMenu}
+            >
+              Sites
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/"
+              className={`text-violet-100 font-bold hover:text-violet-300`}
+              onClick={closeMenu}
+            >
+              Marketing
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/"
+              className={`text-violet-100 font-bold hover:text-violet-300`}
+              onClick={closeMenu}
+            >
+              RGPD
             </Link>
           </li>
         </ul>
