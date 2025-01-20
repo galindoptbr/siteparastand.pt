@@ -29,13 +29,11 @@ const DomainSearch = () => {
           available: false,
         });
       }
-    } catch (error) {
+    } catch {
       setStatus({
         domain,
         available: false,
       });
-    } finally {
-      setLoading(false);
     }
   };
 
