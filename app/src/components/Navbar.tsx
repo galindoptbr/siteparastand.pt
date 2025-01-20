@@ -3,12 +3,10 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 
 import logo from "../assets/images/arrancadalogo.png";
 
 export const Navbar: React.FC = () => {
-  const pathname = usePathname();
   const [openDropdown, setOpenDropdown] = useState<number | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // Estado para o menu mobile
 
