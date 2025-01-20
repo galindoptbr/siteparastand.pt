@@ -1,8 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import priceImage from "../assets/images/prices.png";
-import Image from "next/image";
 
 const DomainSearch = () => {
   const [domain, setDomain] = useState("");
