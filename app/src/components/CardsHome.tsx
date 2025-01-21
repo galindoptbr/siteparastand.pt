@@ -10,7 +10,7 @@ const CardsHome = () => {
   return (
     <>
       <div className="max-w-[1100px] m-auto">
-        <div className="relative z-10 p-5 sm:p-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="relative z-10 p-5 sm:px-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* Card 1 */}
           <div className="w-full max-w-[370px] h-[450px] mx-auto rounded-md overflow-hidden shadow-lg bg-white">
             <div className="relative w-full h-[220px] bg-purple-800">
@@ -144,7 +144,7 @@ const CardsHome = () => {
           </div>
         </div>
         <div className="w-full px-10 mb-10">
-          <p className="text-4xl text-center mb-10">
+          <p className="text-4xl text-center mb-10 mt-5">
             Tudo o que necessita para colocar as suas ideias online!
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

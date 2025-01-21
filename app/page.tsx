@@ -9,8 +9,8 @@ import DomainSearch from "./src/components/DomainSearch";
 const Home: NextPage = () => {
   return (
     <div>
-      <DomainSearch />
       <Banner />
+      <DomainSearch />
       <CardsHome />
       <ProjectHome />
       <RegisterHome />

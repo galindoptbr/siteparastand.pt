@@ -1,19 +1,12 @@
 import axios from "axios";
 import { NextApiRequest, NextApiResponse } from "next";
 
-const DOMAINR_API_URL = "https://domainr.p.rapidapi.com/v2/status";
+const DOMAINR_API_URL_STATUS = "https://domainr.p.rapidapi.com/v2/status";
 const API_KEY = "a1a3506bc5msha68b7439071fcb3p154a0bjsn366005913152";
 
-// Defina os tipos para os dados retornados pela API
+// Interface para os dados retornados pela API
 interface DomainStatus {
   domain: string;
-  status: string;
-  summary?: string;
-}
-
-interface FormattedResult {
-  domain: string;
-  available: boolean;
   status: string;
   summary?: string;
 }
@@ -35,54 +28,39 @@ export default async function handler(
   }
 
   try {
-    console.log(
-      "Chamando a API Domainr para verificar o status do domínio:",
-      domain
-    );
+    console.log("Chamando o endpoint status para o domínio:", domain);
 
-    const options = {
+    // Chamada ao endpoint `status`
+    const statusResponse = await axios.request({
       method: "GET",
-      url: DOMAINR_API_URL,
-      params: {
-        domain: domain,
-      },
+      url: DOMAINR_API_URL_STATUS,
+      params: { domain },
       headers: {
         "x-rapidapi-key": API_KEY,
         "x-rapidapi-host": "domainr.p.rapidapi.com",
       },
-    };
+    });
 
-    const response = await axios.request(options);
+    const statusData: DomainStatus[] = statusResponse.data.status;
 
-    const status: DomainStatus[] = response.data.status;
-
-    if (!status || !Array.isArray(status)) {
-      return res.status(500).json({
-        error: "Resposta inesperada da API Domainr.",
-      });
+    if (!statusData || !Array.isArray(statusData)) {
+      return res
+        .status(500)
+        .json({ error: "Resposta inesperada da API (status)." });
     }
 
-    // Processa os resultados para determinar a disponibilidade
-    const formattedResults: FormattedResult[] = status.map((item) => ({
-      domain: item.domain,
+    // Processa o status do domínio principal
+    const mainDomainStatus = statusData.find((item) => item.domain === domain);
+    const mainDomain = {
+      domain,
       available: ["inactive", "undelegated", "undelegated inactive"].includes(
-        item.status
+        mainDomainStatus?.status || "unknown"
       ),
-      status: item.status,
-      summary: item.summary, // Resumo do status, caso necessário
-    }));
+      status: mainDomainStatus?.status || "unknown",
+      summary: mainDomainStatus?.summary,
+    };
 
-    // Busca o status do domínio principal pesquisado
-    const mainDomain = formattedResults.find((item) => item.domain === domain);
-
-    res.status(200).json({
-      mainDomain: mainDomain || {
-        domain,
-        available: false,
-        status: "unknown",
-      },
-      suggestions: formattedResults.filter((item) => item.domain !== domain),
-    });
+    res.status(200).json({ mainDomain });
   } catch (error: unknown) {
     let errorMessage = "Erro desconhecido.";
 

@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import ClipLoader from "react-spinners/ClipLoader";
 
 const DomainSearch = () => {
   const [domain, setDomain] = useState("");
@@ -10,9 +9,6 @@ const DomainSearch = () => {
     available: boolean;
     status: string;
   } | null>(null);
-  const [suggestions, setSuggestions] = useState<
-    { domain: string; available: boolean; status: string }[]
-  >([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -20,11 +16,15 @@ const DomainSearch = () => {
     setLoading(true);
     setError(null);
     setMainDomain(null);
-    setSuggestions([]);
+
+    if (!domain || !domain.includes(".")) {
+      setError("Por favor, insira um domínio válido (exemplo.com).");
+      setLoading(false);
+      return;
+    }
 
     try {
       const response = await fetch(`/api/checkDomain?domain=${domain}`);
-
       if (!response.ok) {
         const errorText = await response.text();
         throw new Error(
@@ -35,23 +35,23 @@ const DomainSearch = () => {
       const data = await response.json();
       console.log("Dados recebidos:", data);
 
+      // Atualiza o estado do domínio principal
       setMainDomain(data.mainDomain);
-      setSuggestions(data.suggestions);
     } catch (err: unknown) {
       const errorMessage =
         err instanceof Error ? err.message : "Erro desconhecido.";
       setError(errorMessage);
-      console.error("Erro no frontend:", errorMessage);
+      console.error("Erro no frontend:", err);
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <div className="flex justify-center items-center max-w-[1100px] m-auto pt-28">
+    <div className="flex justify-center items-center max-w-[1100px] m-auto">
       <div className="flex flex-col w-full max-w-4xl p-4">
         {/* Input e botão */}
-        <div className="flex items-center mb-4">
+        <div className="flex items-center">
           <input
             type="text"
             value={domain}
@@ -62,83 +62,54 @@ const DomainSearch = () => {
           <button
             onClick={checkDomain}
             disabled={loading || !domain}
-            className={`px-10 py-3 text-white ${
+            className={`w-40 py-3 text-white text-center ${
               loading
                 ? "bg-gray-400 cursor-not-allowed"
                 : "bg-green-600 hover:bg-green-700"
             }`}
           >
-            {loading ? <ClipLoader size={20} color="#fff" /> : "Pesquisar"}
+            {loading ? "Pesquisando..." : "Pesquisar"}
           </button>
         </div>
 
         {/* Mensagem de erro */}
         {error && <p className="text-red-500">{error}</p>}
 
-        {/* Resultado principal */}
-        {mainDomain && (
-          <div
-            className={`p-4 border ${
-              mainDomain.available
-                ? "border-green-400 bg-green-100"
-                : "border-red-400 bg-red-100"
-            } rounded-lg mb-4`}
-          >
-            <div className="flex items-center justify-between">
-              <span
-                className={`text-lg ${
-                  mainDomain.available ? "text-green-700" : "text-red-700"
-                }`}
-              >
-                {mainDomain.domain}{" "}
-                {mainDomain.available
-                  ? "(Disponível para registro)"
-                  : "(Já registrado)"}
-              </span>
-              {mainDomain.available && (
-                <a
-                  href={`https://www.namecheap.com/domains/registration/results/?domain=${mainDomain.domain}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-4 py-2 text-white bg-blue-600 hover:bg-blue-700 rounded-lg"
+        {/* Espaço reservado para o resultado */}
+        <div className="mb-4 mt-4">
+          {mainDomain && (
+            <div
+              className={`p-4 border ${
+                mainDomain.available
+                  ? "border-green-400 bg-green-100"
+                  : "border-red-400 bg-red-100"
+              } rounded-lg`}
+            >
+              <div className="flex items-center justify-between">
+                <span
+                  className={`text-lg ${
+                    mainDomain.available ? "text-green-700" : "text-red-700"
+                  }`}
                 >
-                  Registrar
-                </a>
-              )}
+                  {mainDomain.domain}{" "}
+                  {mainDomain.available
+                    ? "(Disponível para registro)"
+                    : "(Já registrado)"}
+                </span>
+                {mainDomain.available && (
+                  <a
+                    href={`https://www.namecheap.com/domains/registration/results/?domain=${mainDomain.domain}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 text-white bg-blue-600 hover:bg-blue-700 rounded-lg"
+                  >
+                    Registrar
+                  </a>
+                )}
+              </div>
             </div>
-          </div>
-        )}
-
-        {/* Sugestões */}
-        {suggestions.length > 0 && (
-          <div>
-            <h3 className="text-lg font-semibold mb-2">
-              Outras extensões disponíveis:
-            </h3>
-            <ul className="space-y-2">
-              {suggestions.map((suggestion) => (
-                <li
-                  key={suggestion.domain}
-                  className="flex items-center justify-between p-4 border border-gray-200 rounded-lg"
-                >
-                  <span className="text-gray-700">{suggestion.domain}</span>
-                  {suggestion.available ? (
-                    <a
-                      href={`https://www.namecheap.com/domains/registration/results/?domain=${suggestion.domain}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="px-4 py-2 text-white bg-blue-600 hover:bg-blue-700 rounded-lg"
-                    >
-                      Registrar
-                    </a>
-                  ) : (
-                    <span className="text-red-500">Indisponível</span>
-                  )}
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
+          )}
+        </div>
       </div>
     </div>
   );
