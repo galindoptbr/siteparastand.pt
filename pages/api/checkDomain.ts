@@ -4,6 +4,20 @@ import { NextApiRequest, NextApiResponse } from "next";
 const DOMAINR_API_URL = "https://domainr.p.rapidapi.com/v2/status";
 const API_KEY = "a1a3506bc5msha68b7439071fcb3p154a0bjsn366005913152";
 
+// Defina os tipos para os dados retornados pela API
+interface DomainStatus {
+  domain: string;
+  status: string;
+  summary?: string;
+}
+
+interface FormattedResult {
+  domain: string;
+  available: boolean;
+  status: string;
+  summary?: string;
+}
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
@@ -40,7 +54,7 @@ export default async function handler(
 
     const response = await axios.request(options);
 
-    const status = response.data.status;
+    const status: DomainStatus[] = response.data.status;
 
     if (!status || !Array.isArray(status)) {
       return res.status(500).json({
@@ -49,7 +63,7 @@ export default async function handler(
     }
 
     // Processa os resultados para determinar a disponibilidade
-    const formattedResults = status.map((item: any) => ({
+    const formattedResults: FormattedResult[] = status.map((item) => ({
       domain: item.domain,
       available: ["inactive", "undelegated", "undelegated inactive"].includes(
         item.status
@@ -59,9 +73,7 @@ export default async function handler(
     }));
 
     // Busca o status do domínio principal pesquisado
-    const mainDomain = formattedResults.find(
-      (item: any) => item.domain === domain
-    );
+    const mainDomain = formattedResults.find((item) => item.domain === domain);
 
     res.status(200).json({
       mainDomain: mainDomain || {
@@ -69,9 +81,7 @@ export default async function handler(
         available: false,
         status: "unknown",
       },
-      suggestions: formattedResults.filter(
-        (item: any) => item.domain !== domain
-      ),
+      suggestions: formattedResults.filter((item) => item.domain !== domain),
     });
   } catch (error: unknown) {
     let errorMessage = "Erro desconhecido.";
