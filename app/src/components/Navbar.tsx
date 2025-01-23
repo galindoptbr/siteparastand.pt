@@ -4,7 +4,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import Link from "next/link";
 
-import logo from "../assets/images/arrancadalogo.png";
+import logo from "../assets/images/seudominiologo.png";
 
 export const Navbar: React.FC = () => {
   const [openDropdown, setOpenDropdown] = useState<number | null>(null);
@@ -23,7 +23,7 @@ export const Navbar: React.FC = () => {
       <div className="flex justify-between items-center m-auto p-4 max-w-[1200px]">
         {/* Logo */}
         <Link href="/" replace>
-          <Image className="w-48 rounded-lg" src={logo} alt="logo" />
+          <Image className="w-44 rounded-lg" src={logo} alt="logo" />
         </Link>
         {/* Botão para menu mobile */}
         <button
@@ -235,6 +235,7 @@ export const Navbar: React.FC = () => {
               href="/hosting-wordpress"
               className="hover:text-gray-300 transition-all"
             >
+              {/*Hosting E wordPress */}
               Hosting & WordPress
             </Link>
           </li>

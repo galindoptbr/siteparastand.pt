@@ -6,7 +6,7 @@ import { ImFacebook2, ImYoutube, ImInstagram } from "react-icons/im";
 import { CiLinkedin } from "react-icons/ci";
 import { IoIosArrowForward } from "react-icons/io";
 
-import arrancadaLogo from "../assets/images/arrancadalogo.png";
+import arrancadaLogo from "../assets/images/seudominiologo.png";
 import Image from "next/image";
 import { FaPhone } from "react-icons/fa";
 
@@ -22,7 +22,7 @@ export const Footer = () => {
             className="w-60"
           />
           <p className="text-md mb-6">
-            Mais de 80 000 clientes confiam os seus serviços à arrancadaweb.pt.
+            Mais de 80 000 clientes confiam os seus serviços à seudominio.pt.
             Operamos no mercado nacional desde 2001 na área de registo de
             domínios e serviços web.
           </p>
@@ -106,7 +106,7 @@ export const Footer = () => {
         {/* Coluna 3 */}
         <div>
           <h3 className="font-bold text-2xl text-yellow-400 mb-4">
-            Arrancadaweb.pt
+            seudominio.pt
           </h3>
           <ul className="flex flex-col text-md space-y-2">
             {[

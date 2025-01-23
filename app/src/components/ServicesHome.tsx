@@ -23,7 +23,7 @@ const ServicesHome = () => {
           </div>
           <h3 className="text-3xl font-bold mb-2">Confiança</h3>
           <p className="text-smd text-gray-600">
-            Mais de 80 000 clientes confiam os seus serviços à arrancadaweb.pt.
+            Mais de 80 000 clientes confiam os seus serviços à seudominio.pt.
             Operamos no mercado nacional desde 2001 na área de registo de
             domínios e serviços web.
           </p>
@@ -57,7 +57,7 @@ const ServicesHome = () => {
           </div>
           <h3 className="text-3xl font-bold mb-2">Líderes de Mercado</h3>
           <p className="text-md text-gray-600">
-            A arrancadaweb.pt é o maior prestador em Portugal de serviços de Registo
+            A seudominio.pt é o maior prestador em Portugal de serviços de Registo
             de domínios, Alojamento de Sites, Servidores Dedicados, Microsoft
             365 e Email Empresarial.
           </p>
