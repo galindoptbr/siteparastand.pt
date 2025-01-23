@@ -5,7 +5,7 @@ import { Footer } from "./src/components/Footer";
 import ScrollToTop from "./src/components/ScrollToTop";
 
 export const metadata: Metadata = {
-  title: "Arrancada Web",
+  title: "SeuDominio.pt",
   description: "Alojamento Web e Cloud Server",
 };
 
