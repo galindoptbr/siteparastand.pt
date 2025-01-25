@@ -1,10 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import card1 from "../assets/images/card-1.png";
-import card2 from "../assets/images/card-2.png";
-import card3 from "../assets/images/card-3.png";
 import { FaCheck } from "react-icons/fa";
-import Link from "next/link";
 
 const CardsHome = () => {
   return (
