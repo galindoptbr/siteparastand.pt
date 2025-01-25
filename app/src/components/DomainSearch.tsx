@@ -1,6 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
+import datacenterImage from "../assets/images/datacenter.png";
 
 const DomainSearch = () => {
   const [domain, setDomain] = useState("");
@@ -48,7 +50,15 @@ const DomainSearch = () => {
   };
 
   return (
-    <div className="flex justify-center items-center max-w-[1100px] m-auto">
+    <div className="flex flex-col justify-center items-center max-w-[1100px] m-auto mt-10">
+      <div className="text-center p-10">
+        <p className="text-4xl">
+          Pesquise pelo domínio desejado e confira sua disponibilidade!
+        </p>
+        <p className="text-xl">
+          Confira se o nome ideal para o site do seu stand está disponível!
+        </p>
+      </div>
       <div className="flex flex-col w-full max-w-4xl p-4">
         {/* Input e botão */}
         <div className="flex items-center">
@@ -74,9 +84,8 @@ const DomainSearch = () => {
 
         {/* Mensagem de erro */}
         {error && <p className="text-red-500">{error}</p>}
-
         {/* Espaço reservado para o resultado */}
-        <div className="mb-4 mt-4">
+        <div className="mt-4">
           {mainDomain && (
             <div
               className={`p-4 border ${
@@ -110,6 +119,11 @@ const DomainSearch = () => {
             </div>
           )}
         </div>
+        <Image
+          src={datacenterImage}
+          alt="data center image"
+          className="rounded-lg max-w-full mt-10"
+        />
       </div>
     </div>
   );

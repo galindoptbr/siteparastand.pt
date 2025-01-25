@@ -12,8 +12,8 @@ const ProjectHome = () => {
               Confie em nós para desenvolver o seu projeto!
             </p>
             <p className="text-xl">
-              Crie o seu próprio Site ou Loja Online, ou entregue-nos o seu
-              projeto que nós fazemos!
+              Precisa de um site único? Nós desenvolvemos um projeto sob medida
+              para o seu stand!
             </p>
           </div>
           <Image
@@ -26,12 +26,13 @@ const ProjectHome = () => {
             <div className="p-6 flex flex-col justify-between text-center">
               <div>
                 <h3 className="text-2xl font-bold mb-4">
-                  Crie facilmente o seu próprio{" "}
-                  <span className="text-green-600">Site</span>
+                  Seu site pronto em até{" "}
+                  <span className="text-green-600">48 horas</span>
                 </h3>
                 <p className="text-gray-600 mb-6">
-                  Escolha simplesmente um template e construa o seu próprio site
-                  em menos de 1 hora! Dê vida à sua visão, é fácil e rápido.
+                  Após concluir a compra, nós garantimos que o site do seu stand
+                  estará pronto e funcionando em até 48 horas. Um processo
+                  rápido, simples e sem complicações.
                 </p>
               </div>
               <button className="bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700 mt-4">
@@ -43,12 +44,13 @@ const ProjectHome = () => {
             <div className="p-6 flex flex-col justify-between text-center">
               <div>
                 <h3 className="text-2xl font-bold mb-4">
-                  Crie facilmente a sua própria{" "}
-                  <span className="text-green-600">Loja Online</span>
+                  Criação de Logotipo{" "}
+                  <span className="text-green-600">Personalizado</span>
                 </h3>
                 <p className="text-gray-600 mb-6">
-                  Construa a sua Loja Online adaptada a todos os dispositivos em
-                  menos de 1 hora e expanda o seu negócio na Internet!
+                  Transforme a identidade do seu stand com um logotipo
+                  exclusivo, feito sob medida para destacar sua marca no
+                  mercado. Simples, rápido e profissional.
                 </p>
               </div>
               <button className="bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700 mt-4">
@@ -64,8 +66,9 @@ const ProjectHome = () => {
                   <span className="text-green-600">Criamos o seu site</span>
                 </h3>
                 <p className="text-gray-600 mb-6">
-                  Quer ter um Site, Blog, Loja Online ou App? Confie em nós para
-                  desenvolver o seu projeto à medida das suas necessidades.
+                  Quer um site único e personalizado? Confie em nós para
+                  desenvolver o projeto ideal para o seu stand, atendendo às
+                  suas necessidades específicas.
                 </p>
               </div>
               <button className="bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700 mt-4">

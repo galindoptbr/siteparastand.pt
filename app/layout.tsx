@@ -5,8 +5,9 @@ import { Footer } from "./src/components/Footer";
 import ScrollToTop from "./src/components/ScrollToTop";
 
 export const metadata: Metadata = {
-  title: "SeuDominio.pt",
-  description: "Alojamento Web e Cloud Server",
+  title: "siteparastand.pt",
+  description:
+    "Encontre aqui os melhores modelos de site personalizados para o seu stand de carros!",
 };
 
 export default function RootLayout({

@@ -9,12 +9,31 @@ import DomainSearch from "./src/components/DomainSearch";
 const Home: NextPage = () => {
   return (
     <div>
-      <Banner />
-      <DomainSearch />
+      {/* Seção Banner */}
+      <section id="inicio">
+        <Banner />
+      </section>
       <CardsHome />
-      <ProjectHome />
-      <RegisterHome />
-      <ServicesHome />
+
+      {/* Seção Projetos */}
+      <section id="projetos">
+        <ProjectHome />
+      </section>
+
+      {/* Seção Registro */}
+      <section id="registro">
+        <RegisterHome />
+      </section>
+
+      {/* Seção Dominio */}
+      <section id="dominio">
+        <DomainSearch />
+      </section>
+
+      {/* Seção Serviços */}
+      <section id="servicos">
+        <ServicesHome />
+      </section>
     </div>
   );
 };
