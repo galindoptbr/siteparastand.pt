@@ -16,12 +16,6 @@ const CardsHome = () => {
                 alt="Hosting NVMe"
                 className="w-full h-full object-cover"
               />
-              {/* <div className="absolute inset-0 flex flex-col justify-start items-start text-white p-4 top-5">
-                <h3 className="text-3xl font-bold">Hosting NVMe</h3>
-                <p className="text-sm">Super Poderoso, Rápido e Simples!</p>
-                <p className="text-4xl font-bold mt-2">Até -86%</p>
-                <p className="text-xs">Oferta de Domínio no 1º ano</p>
-              </div> */}
             </div>
             <div className="relative z-10 -mt-6 right-20 flex justify-center">
               <button className="bg-green-600 hover:bg-green-700 text-white font-bold px-6 py-3 rounded-md shadow-lg">
@@ -66,12 +60,6 @@ const CardsHome = () => {
                 alt="Criar Site"
                 className="w-full h-full object-cover"
               />
-              {/* <div className="absolute inset-0 flex flex-col justify-start items-start text-white p-4 top-5">
-                <h3 className="text-3xl font-bold">Criar Site</h3>
-                <p className="text-sm">Nunca o seu site foi tão rápido.</p>
-                <p className="text-4xl font-bold mt-2">Até -82%</p>
-                <p className="text-xs">Oferta de Domínio no 1º ano</p>
-              </div> */}
             </div>
             <div className="relative z-10 -mt-6 right-20 flex justify-center">
               <button className="bg-green-600 hover:bg-green-700 text-white font-bold px-6 py-3 rounded-md shadow-lg">
@@ -122,12 +110,6 @@ const CardsHome = () => {
                 alt="Crie Facilmente"
                 className="w-full h-full object-cover"
               />
-              {/* <div className="absolute inset-0 flex flex-col justify-start items-start text-white p-4 top-5">
-                <h3 className="text-3xl font-bold">Crie Facilmente</h3>
-                <p className="text-sm">Política de Privacidade & Cookies</p>
-                <p className="text-4xl font-bold mt-2">Até -50%</p>
-                <p className="text-xs">Evite multas relacionadas com o RGPD</p>
-              </div> */}
             </div>
             <div className="relative z-10 -mt-6 right-20 flex justify-center">
               <button className="bg-green-600 hover:bg-green-700 text-white font-bold px-6 py-3 rounded-md shadow-lg">

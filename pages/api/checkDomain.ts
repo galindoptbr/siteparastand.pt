@@ -40,7 +40,6 @@ export default async function handler(
         "x-rapidapi-host": "domainr.p.rapidapi.com",
       },
     });
-
     const statusData: DomainStatus[] = statusResponse.data.status;
 
     if (!statusData || !Array.isArray(statusData)) {

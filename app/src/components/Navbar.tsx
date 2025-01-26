@@ -20,7 +20,6 @@ export const Navbar: React.FC = () => {
         <Link href="/" replace>
           <Image className="w-44 rounded-lg" src={logo} alt="logo" />
         </Link>
-
         {/* Botão para menu mobile */}
         <button
           onClick={toggleMobileMenu}
@@ -58,7 +57,6 @@ export const Navbar: React.FC = () => {
             </svg>
           )}
         </button>
-
         {/* Navbar para telas grandes */}
         <ul className="hidden lg:flex gap-8 items-center font-semibold text-white">
           <li>
@@ -77,7 +75,6 @@ export const Navbar: React.FC = () => {
             </a>
           </li>
         </ul>
-
         {/* Navbar para telas pequenas */}
         {isMobileMenuOpen && (
           <ul className="lg:hidden bg-zinc-800 fixed top-20 left-0 w-full z-10 flex flex-col gap-4 p-4">

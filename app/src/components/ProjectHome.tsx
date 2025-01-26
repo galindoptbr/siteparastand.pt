@@ -39,7 +39,6 @@ const ProjectHome = () => {
                 Saiba Mais
               </button>
             </div>
-
             {/* Card 2 */}
             <div className="p-6 flex flex-col justify-between text-center">
               <div>
@@ -57,7 +56,6 @@ const ProjectHome = () => {
                 Saiba Mais
               </button>
             </div>
-
             {/* Card 3 */}
             <div className="p-6 flex flex-col justify-between text-center">
               <div>

@@ -26,7 +26,6 @@ const ServicesHome = () => {
             o seu negócio.
           </p>
         </div>
-
         {/* Card 2 */}
         <div className="flex flex-col justify-center items-center text-center max-w-xs p-4">
           <div className="mb-4">
@@ -38,7 +37,6 @@ const ServicesHome = () => {
             todas as etapas, garantindo um atendimento ágil e de qualidade. Conte conosco para o que for preciso!
           </p>
         </div>
-
         {/* Card 3 */}
         <div className="flex flex-col justify-center items-center text-center max-w-xs p-4">
           <div className="mb-4">
