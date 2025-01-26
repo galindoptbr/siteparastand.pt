@@ -3,14 +3,29 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 import logo from "../assets/images/siteparastand-logo.png";
 
 export const Navbar: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname(); // Hook para pegar a rota atual
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const handleNavigation = (hash: string) => {
+    if (pathname !== "/") {
+      // Se não estiver na landing page, redireciona para a home
+      window.location.href = `/${hash}`;
+    } else {
+      // Scroll para o elemento da página inicial
+      const element = document.querySelector(hash);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
   };
 
   return (
@@ -60,17 +75,26 @@ export const Navbar: React.FC = () => {
         {/* Navbar para telas grandes */}
         <ul className="hidden lg:flex gap-8 items-center font-semibold text-white">
           <li>
-            <a href="#inicio" className="hover:text-gray-300 transition-all">
+            <a
+              onClick={() => handleNavigation("#inicio")}
+              className="hover:text-gray-300 transition-all cursor-pointer"
+            >
               Início
             </a>
           </li>
           <li>
-            <a href="#projetos" className="hover:text-gray-300 transition-all">
+            <a
+              onClick={() => handleNavigation("#projetos")}
+              className="hover:text-gray-300 transition-all cursor-pointer"
+            >
               Desenvolvemos seu Site
             </a>
           </li>
           <li>
-            <a href="#dominio" className="hover:text-gray-300 transition-all">
+            <a
+              onClick={() => handleNavigation("#dominio")}
+              className="hover:text-gray-300 transition-all cursor-pointer"
+            >
               Verificar Domínio
             </a>
           </li>
@@ -80,27 +104,33 @@ export const Navbar: React.FC = () => {
           <ul className="lg:hidden bg-zinc-800 fixed top-20 left-0 w-full z-10 flex flex-col gap-4 p-4">
             <li>
               <a
-                href="#inicio"
-                className="text-gray-100 hover:text-gray-300"
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={() => {
+                  handleNavigation("#inicio");
+                  setIsMobileMenuOpen(false);
+                }}
+                className="text-gray-100 hover:text-gray-300 cursor-pointer"
               >
                 Início
               </a>
             </li>
             <li>
               <a
-                href="#projetos"
-                className="text-gray-100 hover:text-gray-300"
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={() => {
+                  handleNavigation("#projetos");
+                  setIsMobileMenuOpen(false);
+                }}
+                className="text-gray-100 hover:text-gray-300 cursor-pointer"
               >
                 Desenvolvemos seu Site
               </a>
             </li>
             <li>
               <a
-                href="#dominio"
-                className="text-gray-100 hover:text-gray-300"
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={() => {
+                  handleNavigation("#dominio");
+                  setIsMobileMenuOpen(false);
+                }}
+                className="text-gray-100 hover:text-gray-300 cursor-pointer"
               >
                 Verificar Domínio
               </a>

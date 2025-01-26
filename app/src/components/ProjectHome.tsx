@@ -1,8 +1,18 @@
+"use client";
+
 import Image from "next/image";
 import React from "react";
 import screens from "../assets/images/screens.png";
 
 const ProjectHome = () => {
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <>
       <div className="bg-white pb-5">
@@ -30,12 +40,12 @@ const ProjectHome = () => {
                   <span className="text-green-600">48 horas</span>
                 </h3>
                 <p className="text-gray-600 mb-6">
-                  Após concluir a compra, nós garantimos que o site do seu stand
+                  Ao comprar um de nossos modelos, nós garantimos que o site do seu stand
                   estará pronto e funcionando em até 48 horas. Um processo
                   rápido, simples e sem complicações.
                 </p>
               </div>
-              <button className="bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700 mt-4">
+              <button onClick={scrollToTop} className="bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700 mt-4">
                 Saiba Mais
               </button>
             </div>

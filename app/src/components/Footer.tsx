@@ -47,7 +47,6 @@ export const Footer = () => {
             </Link>
           </div>
         </div>
-
         {/* Coluna 2: Contatos */}
         <div>
           <h3 className="font-bold text-2xl text-yellow-400 mb-4">Contatos</h3>
@@ -67,7 +66,6 @@ export const Footer = () => {
             </li>
           </ul>
         </div>
-
         {/* Coluna 3: Sobre Nós */}
         <div>
           <h3 className="font-bold text-2xl text-yellow-400 mb-4">Sobre Nós</h3>
@@ -106,7 +104,6 @@ export const Footer = () => {
             </li>
           </ul>
         </div>
-
         {/* Coluna 4: Produtos e Serviços */}
         <div>
           <h3 className="font-bold text-2xl text-yellow-400 mb-4">Serviços</h3>

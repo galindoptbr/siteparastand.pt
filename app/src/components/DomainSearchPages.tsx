@@ -1,10 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
-import datacenterImage from "../assets/images/datacenter.png";
 
-const DomainSearch = () => {
+const DomainSearchPages = () => {
   const [domain, setDomain] = useState("");
   const [mainDomain, setMainDomain] = useState<{
     domain: string;
@@ -100,23 +98,17 @@ const DomainSearch = () => {
                     mainDomain.available ? "text-green-700" : "text-red-700"
                   }`}
                 >
-                  {mainDomain.domain}{" "}
                   {mainDomain.available
-                    ? "(Disponível para registro)"
-                    : "(Já registrado)"}
+                    ? `Parabéns! O domínio ${mainDomain.domain} está disponível para registro.`
+                    : `O domínio ${mainDomain.domain} não está disponível para registro.`}
                 </span>
               </div>
             </div>
           )}
         </div>
-        <Image
-          src={datacenterImage}
-          alt="data center image"
-          className="rounded-lg max-w-full mt-10"
-        />
       </div>
     </div>
   );
 };
 
-export default DomainSearch;
+export default DomainSearchPages;
