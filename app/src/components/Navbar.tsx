@@ -84,10 +84,10 @@ export const Navbar: React.FC = () => {
           </li>
           <li>
             <a
-              onClick={() => handleNavigation("#projetos")}
+              onClick={() => handleNavigation("#servicos")}
               className="hover:text-gray-300 transition-all cursor-pointer"
             >
-              Desenvolvemos seu Site
+              Serviços
             </a>
           </li>
           <li>
@@ -95,7 +95,7 @@ export const Navbar: React.FC = () => {
               onClick={() => handleNavigation("#dominio")}
               className="hover:text-gray-300 transition-all cursor-pointer"
             >
-              Verificar Domínio
+              Domínio
             </a>
           </li>
         </ul>

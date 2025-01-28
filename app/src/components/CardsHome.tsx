@@ -2,181 +2,159 @@
 
 import React from "react";
 import Image from "next/image";
-import { FaCheck } from "react-icons/fa";
+import { FaCheck, FaTimes } from "react-icons/fa";
 import Link from "next/link";
 
 import card1 from "../assets/images/card-1.png";
 import card2 from "../assets/images/card-2.png";
 import card3 from "../assets/images/card-3.png";
 
+const benefits = [
+  { name: "Site 100% responsivo", plans: ["start", "pro", "expert"] },
+  { name: "SEO otimizado", plans: ["start", "pro", "expert"] },
+  { name: "Painel de Administrador", plans: ["start", "pro", "expert"] },
+  { name: "Domínio .pt GRÁTIS por 1 ano", plans: ["start", "pro", "expert"] },
+  { name: "Integração com WhatsApp e Messenger", plans: ["pro", "expert"] },
+  { name: "Integração com OLX e StandVirtual", plans: ["expert"] },
+];
+
+type PlanType = "start" | "pro" | "expert";
+
 const CardsHome = () => {
+  const renderBenefits = (plan: PlanType) =>
+    benefits.map((benefit, index) => (
+      <li className="flex items-center" key={index}>
+        <span
+          className={`mr-2 ${
+            benefit.plans.includes(plan) ? "text-green-600" : "text-red-600"
+          }`}
+        >
+          {benefit.plans.includes(plan) ? <FaCheck /> : <FaTimes />}
+        </span>
+        {benefit.name}
+      </li>
+    ));
+
   return (
-    <>
-      <div className="max-w-[1100px] m-auto pb-10">
-        <div className="text-center p-10">
-          <p className="text-4xl">Nossos Planos de Desenvolvimento</p>
-          <p className="text-xl text-gray-600">
-            Escolha o plano perfeito para criar um site profissional para o seu
-            stand. Oferecemos soluções rápidas, modernas e sob medida para o seu
-            negócio!
-          </p>
+    <div className="max-w-[1100px] m-auto pb-10">
+      <div className="text-center px-5 py-10">
+        <p className="text-4xl">Nossos Planos de Desenvolvimento</p>
+        <p className="text-xl text-gray-600">
+          Escolha o plano perfeito para criar um site profissional para o seu
+          stand.
+        </p>
+      </div>
+
+      <div className="relative z-10 p-5 sm:px-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Card 1 - Start */}
+        <div className="w-full max-w-[370px] mx-auto rounded-md overflow-hidden shadow-lg bg-white">
+          <div className="relative w-full h-[220px] flex items-center justify-center bg-gray-900">
+            <Image
+              src={card1}
+              alt="Modelo Start"
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          {/* Preço */}
+          <div className="text-center py-5">
+            <p className="text-lg text-gray-500 line-through">399€</p>
+            <p className="text-4xl font-bold text-red-600">199€</p>
+            <p className="text-sm text-gray-500">
+              Preço promocional por tempo limitado!
+            </p>
+          </div>
+
+          {/* Benefícios */}
+          <div className="p-5">
+            <ul className="flex flex-col gap-1 text-md text-gray-700">
+              {renderBenefits("start")}
+            </ul>
+          </div>
+
+          {/* Botão */}
+          <div className="p-5 flex justify-center">
+            <Link href="/pages/start-plan">
+              <button className="bg-green-600 hover:bg-green-700 text-white font-bold px-20 py-4 rounded-md shadow-lg w-full">
+                Ver Detalhes
+              </button>
+            </Link>
+          </div>
         </div>
 
-        <div className="relative z-10 p-5 sm:px-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {/* Card 1 */}
-          <div className="w-full max-w-[370px] h-[460px] mx-auto rounded-md overflow-hidden shadow-lg bg-white">
-            <div className="relative w-full h-[220px] bg-purple-800">
-              <Image
-                src={card1}
-                alt="Hosting NVMe"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="relative z-10 -mt-6 right-20 flex justify-center">
-              <Link href="/details-page">
-                <button className="bg-green-600 hover:bg-green-700 text-white font-bold px-6 py-3 rounded-md shadow-lg">
-                  Ver Detalhes
-                </button>
-              </Link>
-            </div>
-            <div className="p-5">
-              <ul className="flex flex-col gap-1 text-md text-gray-700">
-                <li className="flex items-center">
-                  <span className="text-green-600 mr-2">
-                    <FaCheck />
-                  </span>
-                  Site 100% responsivo
-                </li>
-                <li className="flex items-center">
-                  <span className="text-green-600 mr-2">
-                    <FaCheck />
-                  </span>
-                  SEO otimizado
-                </li>
-                <li className="flex items-center">
-                  <span className="text-green-600 mr-2">
-                    <FaCheck />
-                  </span>
-                  Painel de Administrador
-                </li>
-                <li className="flex items-center">
-                  <span className="text-green-600 mr-2">
-                    <FaCheck />
-                  </span>
-                  Domínio .pt GRÁTIS por 1 ano
-                </li>
-              </ul>
-            </div>
+        {/* Card 2 - Pro */}
+        <div className="w-full max-w-[370px] mx-auto rounded-md overflow-hidden shadow-lg bg-white">
+          <div className="relative w-full h-[220px] flex items-center justify-center bg-gray-900">
+            <Image
+              src={card2}
+              alt="Modelo Pro"
+              className="w-full h-full object-cover"
+            />
           </div>
 
-          {/* Card 2 */}
-          <div className="w-full max-w-[370px] h-[460px] mx-auto rounded-md overflow-hidden shadow-lg bg-white">
-            <div className="relative w-full h-[220px] bg-purple-800">
-              <Image
-                src={card2}
-                alt="Criar Site"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="relative z-10 -mt-6 right-20 flex justify-center">
-              <button className="bg-green-600 hover:bg-green-700 text-white font-bold px-6 py-3 rounded-md shadow-lg">
-                Ver Detalhes
-              </button>
-            </div>
-            <div className="p-5">
-              <ul className="flex flex-col gap-1 text-md text-gray-700">
-                <li className="flex items-center">
-                  <span className="text-green-600 mr-2">
-                    <FaCheck />
-                  </span>
-                  Site 100% responsivo
-                </li>
-                <li className="flex items-center">
-                  <span className="text-green-600 mr-2">
-                    <FaCheck />
-                  </span>
-                  SEO otimizado
-                </li>
-                <li className="flex items-center">
-                  <span className="text-green-600 mr-2">
-                    <FaCheck />
-                  </span>
-                  Painel de Administrador
-                </li>
-                <li className="flex items-center">
-                  <span className="text-green-600 mr-2">
-                    <FaCheck />
-                  </span>
-                  Domínio .pt GRÁTIS por 1 ano
-                </li>
-                <li className="flex items-center">
-                  <span className="text-green-600 mr-2">
-                    <FaCheck />
-                  </span>
-                  Integração com WhatsApp e Messenger
-                </li>
-              </ul>
-            </div>
+          {/* Preço */}
+          <div className="text-center py-5">
+            <p className="text-lg text-gray-500 line-through">599€</p>
+            <p className="text-4xl font-bold text-red-600">299€</p>
+            <p className="text-sm text-gray-500">
+              Preço promocional por tempo limitado!
+            </p>
           </div>
 
-          {/* Card 3 */}
-          <div className="w-full max-w-[370px] h-[460px] mx-auto rounded-md overflow-hidden shadow-lg bg-white">
-            <div className="relative w-full h-[220px] bg-purple-800">
-              <Image
-                src={card3}
-                alt="Crie Facilmente"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="relative z-10 -mt-6 right-20 flex justify-center">
-              <button className="bg-green-600 hover:bg-green-700 text-white font-bold px-6 py-3 rounded-md shadow-lg">
+          {/* Benefícios */}
+          <div className="p-5">
+            <ul className="flex flex-col gap-1 text-md text-gray-700">
+              {renderBenefits("pro")}
+            </ul>
+          </div>
+
+          {/* Botão */}
+          <div className="p-5 flex justify-center">
+            <Link href="/pages/pro-plan">
+              <button className="bg-green-600 hover:bg-green-700 text-white font-bold px-20 py-4 rounded-md shadow-lg w-full">
                 Ver Detalhes
               </button>
-            </div>
-            <div className="p-5">
-              <ul className="flex flex-col gap-1 text-md text-gray-700">
-                <li className="flex items-center">
-                  <span className="text-green-600 mr-2">
-                    <FaCheck />
-                  </span>
-                  Site 100% responsivo
-                </li>
-                <li className="flex items-center">
-                  <span className="text-green-600 mr-2">
-                    <FaCheck />
-                  </span>
-                  SEO otimizado
-                </li>
-                <li className="flex items-center">
-                  <span className="text-green-600 mr-2">
-                    <FaCheck />
-                  </span>
-                  Painel de Administrador
-                </li>
-                <li className="flex items-center">
-                  <span className="text-green-600 mr-2">
-                    <FaCheck />
-                  </span>
-                  Domínio .pt GRÁTIS por 1 ano
-                </li>
-                <li className="flex items-center">
-                  <span className="text-green-600 mr-2">
-                    <FaCheck />
-                  </span>
-                  Integração com WhatsApp e Messenger
-                </li>
-                <li className="flex items-center">
-                  <span className="text-green-600 mr-2">
-                    <FaCheck />
-                  </span>
-                  Integração com OLX e StandVirtual
-                </li>
-              </ul>
-            </div>
+            </Link>
+          </div>
+        </div>
+
+        {/* Card 3 - Expert */}
+        <div className="w-full max-w-[370px] mx-auto rounded-md overflow-hidden shadow-lg bg-white">
+          <div className="relative w-full h-[220px] flex items-center justify-center bg-gray-900">
+            <Image
+              src={card3}
+              alt="Modelo Expert"
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          {/* Preço */}
+          <div className="text-center py-5">
+            <p className="text-lg text-gray-500 line-through">899€</p>
+            <p className="text-4xl font-bold text-red-600">399€</p>
+            <p className="text-sm text-gray-500">
+              Preço promocional por tempo limitado!
+            </p>
+          </div>
+
+          {/* Benefícios */}
+          <div className="p-5">
+            <ul className="flex flex-col gap-1 text-md text-gray-700">
+              {renderBenefits("expert")}
+            </ul>
+          </div>
+
+          {/* Botão */}
+          <div className="p-5 flex justify-center">
+            <Link href="/pages/expert-plan">
+              <button className="bg-green-600 hover:bg-green-700 text-white font-bold px-20 py-4 rounded-md shadow-lg w-full">
+                Ver Detalhes
+              </button>
+            </Link>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

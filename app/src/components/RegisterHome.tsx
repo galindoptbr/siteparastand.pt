@@ -1,9 +1,18 @@
+"use client";
+
 import Image from "next/image";
 import React from "react";
 
 import projectImage from "../assets/images/project-image.png";
 
 const RegisterHome = () => {
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div className="max-w-[1100px] m-auto">
       <div className="text-center p-10">
@@ -45,7 +54,10 @@ const RegisterHome = () => {
               aumentando as chances de clientes encontrarem seu stand online.
             </p>
           </div>
-          <button className="bg-black text-white w-72 py-3 px-6 rounded-lg hover:bg-zinc-700">
+          <button
+            onClick={() => scrollToSection("cards")}
+            className="bg-black text-white w-72 py-3 px-6 rounded-lg hover:bg-zinc-700"
+          >
             Crie agora o site do seu stand
           </button>
         </div>

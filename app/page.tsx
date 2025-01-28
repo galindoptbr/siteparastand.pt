@@ -13,10 +13,14 @@ const Home: NextPage = () => {
       <section id="inicio">
         <Banner />
       </section>
-      <CardsHome />
 
-      {/* Seção Projetos */}
-      <section id="projetos">
+      {/* Seção Cards */}
+      <section id="cards">
+        <CardsHome />
+      </section>
+
+      {/* Seção Servicos */}
+      <section id="servicos">
         <ProjectHome />
       </section>
 

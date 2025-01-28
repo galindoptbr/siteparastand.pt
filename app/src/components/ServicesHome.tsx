@@ -7,7 +7,7 @@ import liderImage from "../assets/images/lider.png";
 
 const ServicesHome = () => {
   return (
-    <div className="text-center p-10">
+    <div className="max-w-[1100px] m-auto text-center px-5 py-10">
       <p className="text-4xl">Algumas razões para usar os nossos serviços</p>
       <div className="flex justify-center gap-8 flex-wrap">
         {/* Card 1 */}

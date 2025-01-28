@@ -1,10 +1,11 @@
 import React from "react";
 import Image from "next/image";
 
-import projectImage from "../src/assets/images/start.png";
-import DomainSearchPages from "../src/components/DomainSearchPages";
+import projectImage from "../../src/assets/images/start.png";
+import DomainSearchPages from "../../src/components/DomainSearchPages";
+import ServicesHome from "@/app/src/components/ServicesHome";
 
-const DetailsPage = () => {
+const StartPlanPage = () => {
   return (
     <div className="max-w-[1100px] m-auto mb-20 mt-20">
       <div className="text-center p-10">
@@ -34,7 +35,7 @@ const DetailsPage = () => {
               className="w-full h-auto rounded-lg object-contain"
             />
           </div>
-          {/* Texto ao lado da imagem */}
+          {/* Texto e botões */}
           <div className="flex flex-col gap-4 mt-2">
             <div>
               <h3 className="text-2xl font-bold">Site 100% Responsivo</h3>
@@ -64,9 +65,20 @@ const DetailsPage = () => {
                 presença profissional para o seu stand.
               </p>
             </div>
-            <button className="bg-green-600 text-white w-72 py-3 px-6 rounded-lg hover:bg-green-700">
-              Compre agora o site do seu stand
-            </button>
+            {/* Botões */}
+            <div className="flex flex-col md:flex-row w-full gap-4 items-center">
+              <button className="bg-red-600 text-white w-72 py-3 px-6 rounded-lg shadow-lg transition-all duration-300 hover:bg-red-700 hover:scale-105">
+                Garanta seu site com desconto!
+              </button>
+              <a
+                href="https://seu-stand-eight.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-blue-600 text-white w-72 py-3 px-6 text-center rounded-lg shadow-lg transition-all duration-300 hover:bg-blue-700 hover:scale-105"
+              >
+                Visualizar Site
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -131,8 +143,9 @@ const DetailsPage = () => {
           Clique no botão acima e comece agora!
         </p>
       </div>
+      <ServicesHome />
     </div>
   );
 };
 
-export default DetailsPage;
+export default StartPlanPage;
