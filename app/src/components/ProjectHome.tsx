@@ -3,6 +3,7 @@
 import Image from "next/image";
 import React from "react";
 import screens from "../assets/images/screens.png";
+import Link from "next/link";
 
 const ProjectHome = () => {
   const scrollToSection = (sectionId: string) => {
@@ -64,9 +65,12 @@ const ProjectHome = () => {
                   mercado. Simples, rápido e profissional.
                 </p>
               </div>
-              <button className="bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700 mt-4">
+              <Link
+                href={"/pages/logotipo"}
+                className="bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700 mt-4"
+              >
                 Saiba Mais
-              </button>
+              </Link>
             </div>
             {/* Card 3 */}
             <div className="p-6 flex flex-col justify-between text-center">
@@ -81,9 +85,12 @@ const ProjectHome = () => {
                   suas necessidades específicas.
                 </p>
               </div>
-              <button className="bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700 mt-4">
+              <Link
+                href={"/pages/custom-website"}
+                className="bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700 mt-4"
+              >
                 Saiba Mais
-              </button>
+              </Link>
             </div>
           </div>
         </div>

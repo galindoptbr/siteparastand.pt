@@ -7,8 +7,24 @@ import { IoIosArrowForward } from "react-icons/io";
 
 import logo from "../assets/images/siteparastand-logo.png";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 export const Footer = () => {
+  const pathname = usePathname();
+
+  const handleNavigation = (hash: string) => {
+    if (pathname !== "/") {
+      // Se não estiver na landing page, redireciona para a home
+      window.location.href = `/${hash}`;
+    } else {
+      // Scroll para o elemento da página inicial
+      const element = document.querySelector(hash);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
+
   return (
     <footer className="bg-zinc-800 text-white p-10">
       <div className="max-w-[1100px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-4 gap-8">
@@ -22,7 +38,7 @@ export const Footer = () => {
           </p>
           <div className="flex gap-4">
             <Link href="https://www.facebook.com" target="_blank">
-              <div className="w-10 h-10 flex items-center justify-center bg-yellow-400 rounded-full">
+              <div className="w-10 h-10 flex items-center justify-center bg-yellow-500 rounded-full">
                 <ImFacebook2
                   size={20}
                   className="cursor-pointer text-white hover:text-violet-700"
@@ -30,7 +46,7 @@ export const Footer = () => {
               </div>
             </Link>
             <Link href="https://www.youtube.com" target="_blank">
-              <div className="w-10 h-10 flex items-center justify-center bg-yellow-400 rounded-full">
+              <div className="w-10 h-10 flex items-center justify-center bg-yellow-500 rounded-full">
                 <ImYoutube
                   size={20}
                   className="cursor-pointer text-white hover:text-violet-700"
@@ -38,7 +54,7 @@ export const Footer = () => {
               </div>
             </Link>
             <Link href="https://www.instagram.com" target="_blank">
-              <div className="w-10 h-10 flex items-center justify-center bg-yellow-400 rounded-full">
+              <div className="w-10 h-10 flex items-center justify-center bg-yellow-500 rounded-full">
                 <ImInstagram
                   size={20}
                   className="cursor-pointer text-white hover:text-violet-700"
@@ -49,84 +65,68 @@ export const Footer = () => {
         </div>
         {/* Coluna 2: Contatos */}
         <div>
-          <h3 className="font-bold text-2xl text-yellow-400 mb-4">Contatos</h3>
+          <h3 className="font-bold text-2xl text-yellow-500 mb-4">Contatos</h3>
           <ul className="flex flex-col text-md space-y-2">
             <li>
-              <p className="text-lg">Telefone:</p>
-              <p className="text-2xl font-bold">999 999 999</p>
+              <p className="text-lg">Email:</p>
+              <p className="text-md font-bold">siteparastand@gmail.com</p>
             </li>
             <p className="text-sm">Seg. a Sex. 9h00 | 18h00</p>
-            <li>
-              <Link
-                href="/suporte"
-                className="flex items-center gap-2 hover:text-gray-400"
-              >
-                <IoIosArrowForward /> Suporte
-              </Link>
-            </li>
           </ul>
         </div>
         {/* Coluna 3: Sobre Nós */}
         <div>
-          <h3 className="font-bold text-2xl text-yellow-400 mb-4">Sobre Nós</h3>
+          <h3 className="font-bold text-2xl text-yellow-500 mb-4">Sobre Nós</h3>
           <ul className="flex flex-col text-md space-y-2">
             <li>
               <Link
-                href="/sobre"
+                href="/pages/about"
                 className="flex items-center gap-2 hover:text-gray-400"
               >
                 <IoIosArrowForward /> Quem Somos
               </Link>
             </li>
             <li>
-              <Link
-                href="/servicos"
+              <button
+                onClick={() => handleNavigation("#servicos")}
                 className="flex items-center gap-2 hover:text-gray-400"
               >
                 <IoIosArrowForward /> Nossos Serviços
-              </Link>
+              </button>
             </li>
             <li>
               <Link
-                href="/politicas"
+                href="/pages/privacy-policy"
                 className="flex items-center gap-2 hover:text-gray-400"
               >
                 <IoIosArrowForward /> Políticas de Privacidade
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/termos"
-                className="flex items-center gap-2 hover:text-gray-400"
-              >
-                <IoIosArrowForward /> Termos e Condições
               </Link>
             </li>
           </ul>
         </div>
         {/* Coluna 4: Produtos e Serviços */}
         <div>
-          <h3 className="font-bold text-2xl text-yellow-400 mb-4">Serviços</h3>
+          <h3 className="font-bold text-2xl text-yellow-500 mb-4">Serviços</h3>
           <ul className="text-md space-y-2">
             <li>
-              <Link
-                href="/dominios"
+              <button
+                onClick={() => handleNavigation("#cards")}
                 className="flex items-center gap-2 hover:text-gray-400"
               >
-                <IoIosArrowForward /> Registro de Domínios
+                <IoIosArrowForward /> Sites para Stand
+              </button>
+            </li>
+            <li>
+              <Link
+                href={"/pages/custom-website"}
+                className="flex items-center gap-2 hover:text-gray-400"
+              >
+                <IoIosArrowForward /> Site Personalizado
               </Link>
             </li>
             <li>
               <Link
-                href="/web-design"
-                className="flex items-center gap-2 hover:text-gray-400"
-              >
-                <IoIosArrowForward /> Criação de Sites
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/logos"
+                href={"/pages/logotipo"}
                 className="flex items-center gap-2 hover:text-gray-400"
               >
                 <IoIosArrowForward /> Criação de Logotipos

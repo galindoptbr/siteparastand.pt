@@ -11,10 +11,11 @@ import card3 from "../assets/images/card-3.png";
 
 const benefits = [
   { name: "Site 100% responsivo", plans: ["start", "pro", "expert"] },
-  { name: "SEO otimizado", plans: ["start", "pro", "expert"] },
+  { name: "SEO otimizado Google", plans: ["start", "pro", "expert"] },
   { name: "Painel de Administrador", plans: ["start", "pro", "expert"] },
   { name: "Domínio .pt GRÁTIS por 1 ano", plans: ["start", "pro", "expert"] },
   { name: "Integração com WhatsApp e Messenger", plans: ["pro", "expert"] },
+  { name: "Criação de logotipo personalizado", plans: ["expert"] },
   { name: "Integração com OLX e StandVirtual", plans: ["expert"] },
 ];
 
