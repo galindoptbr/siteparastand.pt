@@ -76,6 +76,15 @@ const ExpertPlanPage = () => {
             </div>
             <div>
               <h3 className="text-2xl font-bold">
+                Criação de Logotipo Personalizado
+              </h3>
+              <p className="text-gray-600">
+                Tenha um logotipo exclusivo e profissional para fortalecer a
+                identidade visual do seu stand.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold">
                 Integração com OLX e StandVirtual
               </h3>
               <p className="text-gray-600">
@@ -119,7 +128,9 @@ const ExpertPlanPage = () => {
           <strong>site responsivo</strong>, <strong>SEO otimizado</strong>, e um{" "}
           <strong>painel de administrador avançado</strong>. Ele também conta
           com <strong>integração com WhatsApp e Messenger</strong> para
-          facilitar a comunicação com seus clientes.
+          facilitar a comunicação com seus clientes e{" "}
+          <strong>criação de logotipo personalizado</strong> para uma identidade
+          visual única.
         </p>
         <h3 className="text-2xl font-bold mt-8">
           O que você ganha com o Modelo Expert:
@@ -128,6 +139,10 @@ const ExpertPlanPage = () => {
           <li>
             <strong>Integração Completa:</strong> Anuncie diretamente no OLX e
             StandVirtual.
+          </li>
+          <li>
+            <strong>Criação de Logotipo:</strong> Desenvolva uma identidade
+            visual profissional e única.
           </li>
           <li>
             <strong>Maior Alcance:</strong> Amplie sua visibilidade e alcance
