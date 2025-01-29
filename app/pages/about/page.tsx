@@ -1,11 +1,12 @@
 import React from "react";
 import Image from "next/image";
 
-import aboutImage from "../../src/assets/images/project-image.png";
+import aboutImage from "../../src/assets/images/about.png";
+import ServicesHome from "@/app/src/components/ServicesHome";
 
 const AboutPage = () => {
   return (
-    <div className="max-w-[1100px] mt-10 mx-auto px-6 py-16 text-gray-800">
+    <div className="max-w-[1100px] mt-24 m-auto py-5 px-4 text-gray-800">
       {/* Seção Hero */}
       <div className="text-center mb-16">
         <h1 className="text-5xl font-bold text-zinc-800">Sobre Nós</h1>
@@ -101,6 +102,7 @@ const AboutPage = () => {
           Fale Conosco
         </a>
       </div>
+      <ServicesHome />
     </div>
   );
 };
