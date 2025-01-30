@@ -67,9 +67,13 @@ const StartPlanPage = () => {
             </div>
             {/* Botões */}
             <div className="flex flex-col md:flex-row w-full gap-4 items-center">
-              <button className="bg-red-600 text-white w-72 py-3 px-6 rounded-lg shadow-lg transition-all duration-300 hover:bg-red-700 hover:scale-105">
+              <a
+                href="https://buy.stripe.com/9AQbLwefbeEkenSfZ5"
+                target="_blank"
+                className="bg-red-600 text-white w-72 py-3 px-6 rounded-lg shadow-lg transition-all duration-300 hover:bg-red-700 hover:scale-105"
+              >
                 Garanta seu site com desconto!
-              </button>
+              </a>
               <a
                 href="https://seu-stand-eight.vercel.app/"
                 target="_blank"
