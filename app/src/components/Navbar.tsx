@@ -83,6 +83,14 @@ export const Navbar: React.FC = () => {
             </a>
           </li>
           <li>
+            <Link
+              href={"/pages/about"}
+              className="hover:text-gray-300 transition-all cursor-pointer"
+            >
+              Sobre Nós
+            </Link>
+          </li>
+          <li>
             <a
               onClick={() => handleNavigation("#servicos")}
               className="hover:text-gray-300 transition-all cursor-pointer"

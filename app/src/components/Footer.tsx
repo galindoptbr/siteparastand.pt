@@ -36,7 +36,7 @@ export const Footer = () => {
             negócio a se destacar no mercado digital com soluções rápidas e
             personalizadas.
           </p>
-          <div className="flex gap-4">
+          {/* <div className="flex gap-4">
             <Link href="https://www.facebook.com" target="_blank">
               <div className="w-10 h-10 flex items-center justify-center bg-yellow-500 rounded-full">
                 <ImFacebook2
@@ -61,7 +61,7 @@ export const Footer = () => {
                 />
               </div>
             </Link>
-          </div>
+          </div> */}
         </div>
         {/* Coluna 2: Contatos */}
         <div>
@@ -83,7 +83,7 @@ export const Footer = () => {
                 href="/pages/about"
                 className="flex items-center gap-2 hover:text-gray-400"
               >
-                <IoIosArrowForward /> Quem Somos
+                <IoIosArrowForward /> Sobre Nós
               </Link>
             </li>
             <li>
