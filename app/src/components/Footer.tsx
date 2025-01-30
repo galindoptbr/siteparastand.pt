@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { ImFacebook2, ImYoutube, ImInstagram } from "react-icons/im";
+// import { ImFacebook2, ImYoutube, ImInstagram } from "react-icons/im";
 import { IoIosArrowForward } from "react-icons/io";
 
 import logo from "../assets/images/siteparastand-logo.png";
