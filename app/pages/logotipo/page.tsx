@@ -72,9 +72,9 @@ const LogotipoPage = () => {
               <a
                 href="https://buy.stripe.com/8wM3f00olgMsbbG004"
                 target="_blank"
-                className="bg-red-600 text-white w-72 py-3 px-6 rounded-lg shadow-lg transition-all duration-300 hover:bg-red-700 hover:scale-105"
+                className="bg-red-600 text-white w-72 py-3 px-6 rounded-lg shadow-lg text-center transition-all duration-300 hover:bg-red-700 hover:scale-105"
               >
-                Garanta seu site com desconto!
+                Comprar meu logotipo agora!
               </a>
             </div>
           </div>
