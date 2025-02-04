@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { FaCheck, FaTimes } from "react-icons/fa";
+import { FaCheck, FaTimes, FaWhatsapp } from "react-icons/fa";
 import Link from "next/link";
 
 import card1 from "../assets/images/card-1.png";
@@ -14,8 +14,11 @@ const benefits = [
   { name: "SEO otimizado Google", plans: ["start", "pro", "expert"] },
   { name: "Painel de Administrador", plans: ["start", "pro", "expert"] },
   { name: "Domínio .pt GRÁTIS por 1 ano", plans: ["start", "pro", "expert"] },
-  { name: "Integração com WhatsApp e Messenger", plans: ["pro", "expert"] },
-  { name: "Criação de logotipo personalizado", plans: ["expert"] },
+  {
+    name: "Integração com WhatsApp e Messenger",
+    plans: ["start", "pro", "expert"],
+  },
+  { name: "Criação de logotipo personalizado", plans: ["pro","expert"] },
   { name: "Integração com OLX e StandVirtual", plans: ["expert"] },
 ];
 
@@ -73,7 +76,7 @@ const CardsHome = () => {
             </ul>
           </div>
 
-          {/* Botão */}
+          {/* Botao */}
           <div className="p-5 flex justify-center">
             <Link href="/pages/start-plan">
               <button className="bg-green-600 hover:bg-green-700 text-white font-bold px-20 py-4 rounded-md shadow-lg w-full">
@@ -119,14 +122,18 @@ const CardsHome = () => {
           </div>
         </div>
 
-        {/* Card 3 - Expert */}
-        <div className="w-full max-w-[370px] mx-auto rounded-md overflow-hidden shadow-lg bg-white">
+        {/* Card 3 - Expert (Desativado) */}
+        <div className="relative w-full max-w-[370px] mx-auto rounded-md overflow-hidden shadow-lg bg-gray-300 opacity-60 pointer-events-none">
           <div className="relative w-full h-[220px] flex items-center justify-center bg-gray-900">
             <Image
               src={card3}
               alt="Modelo Expert"
               className="w-full h-full object-cover"
             />
+            {/* Faixa diagonal "Em Breve" */}
+            <div className="absolute top-5 right-[-50px] transform rotate-45 bg-red-600 text-white text-sm font-bold py-1 px-10 shadow-lg">
+              Em Breve
+            </div>
           </div>
 
           {/* Preço */}
@@ -145,13 +152,11 @@ const CardsHome = () => {
             </ul>
           </div>
 
-          {/* Botão */}
+          {/* Botão Desativado */}
           <div className="p-5 flex justify-center">
-            <Link href="/pages/expert-plan">
-              <button className="bg-green-600 hover:bg-green-700 text-white font-bold px-20 py-4 rounded-md shadow-lg w-full">
-                Ver Detalhes
-              </button>
-            </Link>
+            <button className="bg-gray-500 text-white font-bold px-20 py-4 rounded-md shadow-lg w-full cursor-not-allowed">
+              Indisponível
+            </button>
           </div>
         </div>
       </div>
