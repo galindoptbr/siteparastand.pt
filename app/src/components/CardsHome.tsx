@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { FaCheck, FaTimes, FaWhatsapp } from "react-icons/fa";
+import { FaCheck, FaTimes } from "react-icons/fa";
 import Link from "next/link";
 
 import card1 from "../assets/images/card-1.png";
